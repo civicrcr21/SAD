@@ -1,9 +1,13 @@
-<div class="hero-unit">
-	<h1>Welcome to SAD</h1>
-	<p>
-		You have found the Offical Webpage for the group SAD!
-	</p>
-	<p>
-		<%= link_to "Sign Up Now!", "#", class: "btn btn-primary btn-large" %>
-	</p>
-</div>
+<% if user_signed_in? %>
+	<h1>You're logged in!</h1>
+<% else %>
+	<div class="hero-unit">
+		<h1>Welcome to SAD</h1>
+		<p>
+			You have found the Offical Webpage for the group SAD!
+		</p>
+		<p>
+			<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
+	</div>
+<% end %>
